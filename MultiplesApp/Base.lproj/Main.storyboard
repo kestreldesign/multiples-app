@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultiplesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_iPhone6+" translatesAutoresizingMaskIntoConstraints="NO" id="O2D-jm-k5D">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zba-pz-StS" userLabel="TickButton">
+                                <rect key="frame" x="180" y="300" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zba-pz-StS" secondAttribute="height" multiplier="1:1" id="Chh-eR-WBk"/>
+                                </constraints>
+                                <state key="normal" image="tickbutton"/>
+                                <connections>
+                                    <action selector="startTheMultiplying:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPv-NC-Nh8"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJE-be-2Qx" userLabel="AddButton">
+                                <rect key="frame" x="180" y="300" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MJE-be-2Qx" secondAttribute="height" multiplier="1:1" id="t9H-UN-qKh"/>
+                                </constraints>
+                                <state key="normal" image="addbutton"/>
+                                <connections>
+                                    <action selector="addAnotherOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7oY-gW-fQj"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multipleslogo" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-SA-eOH">
+                                <rect key="frame" x="180" y="0.0" width="240" height="249"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-ym-huC">
+                                <rect key="frame" x="150" y="175" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="y6Y-Jf-ftO"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNh-bS-jWF">
+                                <rect key="frame" x="180" y="120" width="240" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zba-pz-StS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ur-ig-d1n"/>
+                            <constraint firstAttribute="width" secondItem="bKt-ym-huC" secondAttribute="width" multiplier="2" id="776-Bu-D39"/>
+                            <constraint firstItem="O2D-jm-k5D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7f1-r1-oIK"/>
+                            <constraint firstItem="O2D-jm-k5D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9vr-pe-gcN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zba-pz-StS" secondAttribute="bottom" constant="60" id="AiJ-E5-54r"/>
+                            <constraint firstItem="TNh-bS-jWF" firstAttribute="width" secondItem="wmC-SA-eOH" secondAttribute="width" id="S1l-Rg-2V9"/>
+                            <constraint firstItem="bKt-ym-huC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Saw-Mz-Dhd"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="top" secondItem="bKt-ym-huC" secondAttribute="bottom" constant="75" id="Uxd-Tx-BMe"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="width" secondItem="MJE-be-2Qx" secondAttribute="height" multiplier="1:1" id="d7d-TU-OQP"/>
+                            <constraint firstItem="TNh-bS-jWF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gmy-0I-JfK"/>
+                            <constraint firstAttribute="trailing" secondItem="O2D-jm-k5D" secondAttribute="trailing" id="lOt-iv-eqn"/>
+                            <constraint firstItem="wmC-SA-eOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mut-z3-IZZ"/>
+                            <constraint firstAttribute="width" secondItem="zba-pz-StS" secondAttribute="width" multiplier="2.5" id="nhf-Wc-ZCI"/>
+                            <constraint firstItem="TNh-bS-jWF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="ntV-jL-pqi"/>
+                            <constraint firstAttribute="width" secondItem="wmC-SA-eOH" secondAttribute="width" multiplier="2.5" id="qfI-QJ-xgk"/>
+                            <constraint firstItem="wmC-SA-eOH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="r6U-YU-kit"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="height" secondItem="zba-pz-StS" secondAttribute="height" id="s1N-2x-sF0"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="centerX" secondItem="zba-pz-StS" secondAttribute="centerX" id="s2j-Zb-p0a"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="centerY" secondItem="zba-pz-StS" secondAttribute="centerY" id="vcm-Ff-YzX"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="width" secondItem="zba-pz-StS" secondAttribute="width" id="veJ-Xi-Qsa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O2D-jm-k5D" secondAttribute="bottom" id="wiW-Ob-C3S"/>
+                            <constraint firstItem="wmC-SA-eOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xhx-Kb-nt1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="MJE-be-2Qx" id="42w-Fl-x5G"/>
+                        <outlet property="backgroundImage" destination="O2D-jm-k5D" id="QuR-7v-9Es"/>
+                        <outlet property="multiplesLogo" destination="wmC-SA-eOH" id="rR1-LA-bZY"/>
+                        <outlet property="sumsTextLabel" destination="TNh-bS-jWF" id="Y27-mt-ijW"/>
+                        <outlet property="textField" destination="bKt-ym-huC" id="CIq-dP-JgH"/>
+                        <outlet property="tickButton" destination="zba-pz-StS" id="KYp-Kd-R1V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="92" y="422"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addbutton" width="640" height="639"/>
+        <image name="background_iPhone6+" width="1242" height="2208"/>
+        <image name="multipleslogo" width="804" height="249"/>
+        <image name="tickbutton" width="640" height="639"/>
+    </resources>
 </document>
