@@ -46,7 +46,7 @@
                                 <rect key="frame" x="180" y="0.0" width="240" height="249"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-ym-huC">
-                                <rect key="frame" x="150" y="175" width="300" height="50"/>
+                                <rect key="frame" x="100" y="150" width="400" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="y6Y-Jf-ftO"/>
                                 </constraints>
@@ -54,8 +54,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNh-bS-jWF">
-                                <rect key="frame" x="180" y="120" width="240" height="35"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNh-bS-jWF">
+                                <rect key="frame" x="120" y="120" width="360" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,13 +64,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zba-pz-StS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ur-ig-d1n"/>
-                            <constraint firstAttribute="width" secondItem="bKt-ym-huC" secondAttribute="width" multiplier="2" id="776-Bu-D39"/>
+                            <constraint firstAttribute="width" secondItem="bKt-ym-huC" secondAttribute="width" multiplier="1.5" id="776-Bu-D39"/>
                             <constraint firstItem="O2D-jm-k5D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7f1-r1-oIK"/>
                             <constraint firstItem="O2D-jm-k5D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9vr-pe-gcN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zba-pz-StS" secondAttribute="bottom" constant="60" id="AiJ-E5-54r"/>
-                            <constraint firstItem="TNh-bS-jWF" firstAttribute="width" secondItem="wmC-SA-eOH" secondAttribute="width" id="S1l-Rg-2V9"/>
+                            <constraint firstItem="TNh-bS-jWF" firstAttribute="width" secondItem="wmC-SA-eOH" secondAttribute="width" multiplier="1.5" id="S1l-Rg-2V9"/>
                             <constraint firstItem="bKt-ym-huC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Saw-Mz-Dhd"/>
-                            <constraint firstItem="MJE-be-2Qx" firstAttribute="top" secondItem="bKt-ym-huC" secondAttribute="bottom" constant="75" id="Uxd-Tx-BMe"/>
+                            <constraint firstItem="MJE-be-2Qx" firstAttribute="top" secondItem="bKt-ym-huC" secondAttribute="bottom" constant="100" id="Uxd-Tx-BMe"/>
                             <constraint firstItem="MJE-be-2Qx" firstAttribute="width" secondItem="MJE-be-2Qx" secondAttribute="height" multiplier="1:1" id="d7d-TU-OQP"/>
                             <constraint firstItem="TNh-bS-jWF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gmy-0I-JfK"/>
                             <constraint firstAttribute="trailing" secondItem="O2D-jm-k5D" secondAttribute="trailing" id="lOt-iv-eqn"/>

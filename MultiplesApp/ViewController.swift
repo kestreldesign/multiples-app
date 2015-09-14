@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     let neverExceedNumber = 60;
     var currentNumber = 0;
     
-    
-    
+    //outlets
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var multiplesLogo: UIImageView!
     @IBOutlet weak var tickButton: UIButton!
@@ -24,28 +23,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sumsTextLabel: UILabel!
     
+    //begin the 'game' action function
     @IBAction func startTheMultiplying(sender: AnyObject) {
-        currentNumber = 0;
+        currentNumber = 0; //reset in case the 'gmae' is played more than once
 
         //check input
         userInputNumber = getUserInput()!
         
         if userInputNumber != 0 {
             
-            //hide the tick button, textbox and logo
-            tickButton.hidden = true
-            textField.hidden = true
-            multiplesLogo.hidden = true
-            
-            //show the add button and text
-            sumsTextLabel.hidden = false;
-            addButton.hidden = false;
-            
             //do the first sum
             doTheSum()
             
-            //unhide the label
-            sumsTextLabel.hidden = false
+            //show and hide relevant objects
+            playTheGame(true)
             
         } else {
             //error message for bad input (string, null or 0)
@@ -55,7 +46,30 @@ class ViewController: UIViewController {
         
     }
     
+    func playTheGame(play :Bool){
+        
+        //if playing, hide the tick button, textbox and logo
+        tickButton.hidden = play
+        textField.hidden = play
+        multiplesLogo.hidden = play
+        
+        //if playing, unhide the label and add button
+        sumsTextLabel.hidden = !play
+        addButton.hidden = !play
+        
+        if !play {
+            textField.text = nil
+            textField.placeholder = "what multiple to add by?"
+        }
+    }
+    
     @IBAction func addAnotherOne(sender: AnyObject) {
+        doTheSum();
+        
+        //if the currentNumber is now over our maximum, end the 'game'
+        if currentNumber >= neverExceedNumber {
+            playTheGame(false)
+        }
     }
     
     func getUserInput() ->Int? {
